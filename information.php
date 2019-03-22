@@ -11,9 +11,9 @@
 
 ご回答ありがとうございます！<br>
 <?php 
-$dbhost = 'localhost:3306';  // mysql服务器主机地址
-$dbuser = 'root';            // mysql用户名
-$dbpass = '';          // mysql用户名密码
+$dbhost = 'localhost:3306';  
+$dbuser = 'root';            
+$dbpass = '';          
 $dbname = "votedata";
 $x=0;
 $y=0;
@@ -28,7 +28,7 @@ $sql = "SELECT iphone, android, normal FROM votetable";
 $result = $conn->query($sql);
  
 if ($result->num_rows > 0) {
-    // 输出数据
+    
     while($row = $result->fetch_assoc()) {
 		global $x,$y,$z;
 		$x = $row["iphone"];
@@ -60,7 +60,7 @@ if ($_POST["phone"] == "iphone"){
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-    // 输出数据
+    
     while($row = $result->fetch_assoc()) {
 		echo "-スマートフォン(iosシステム)  -";
 		echo $row["iphone"];
