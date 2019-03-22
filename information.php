@@ -30,7 +30,6 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     
     while($row = $result->fetch_assoc()) {
-		global $x,$y,$z;
 		$x = $row["iphone"];
 		$y = $row["android"];
 		$z = $row["normal"];
@@ -40,18 +39,15 @@ if ($result->num_rows > 0) {
 }
 echo "あなたの選択は：";
 if ($_POST["phone"] == "iphone"){
-	global $x;
 	$x++;
 	$conn->query("UPDATE votetable SET iphone=$x");
 	echo "スマートフォン(iosシステム)<br>";
 
 }elseif($_POST["phone"] == "android"){
-	global $y;
 	$y++;
 	$conn->query("UPDATE votetable SET android=$y");
 	echo "スマートフォン(Androidシステム)<br>";
 }else{
-	global $z;
 	$z++;
 	$conn->query("UPDATE votetable SET normal=$z");
 	echo "普通の携帯<br>";
