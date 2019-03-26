@@ -8,12 +8,23 @@
 </style>
 </head>
 <body> 
+<script>
+	function checkForm(){
+        if(document.input.phone.value==""){
+                alert("選択肢を選んでください");
+        }else{
+            document.input.submit();        
+        }
+    }
+</script>
+
 	<h1>好みの携帯電話の種類は？</h1>
 	<form name="input" action="information.php" method="post">
 	<input type="radio" name="phone" value="iphone">スマートフォン(iosシステム)<br>
 	<input type="radio" name="phone" value="android">スマートフォン(Androidシステム)<br>
 	<input type="radio" name="phone" value="normal">普通の携帯<br>
-	<input type="submit" value="Submit">
+	<input type="button" value="Submit" onclick="checkForm()" />
 	</form> 
+
 </body>
 </html>
